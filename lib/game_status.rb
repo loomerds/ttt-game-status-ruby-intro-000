@@ -27,9 +27,11 @@ def won?(board)
     end
     x += 1
   end
-  puts won_helper(xNums)
-  puts won_helper(oNums)
-
+  if won_helper(xNums) != false
+    return won_helper(xNums)
+  else
+    return won_helper(oNums)
+  end
 end
 
 def won_helper(arr)
