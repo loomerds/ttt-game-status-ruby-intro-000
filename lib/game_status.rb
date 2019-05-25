@@ -69,3 +69,13 @@ def full?(board)
     val == "X" || val == "O"
   end
 end
+
+def draw(board)
+  if won?(board) != false || won?(board) == false && full?(board) 
+    return false
+  else
+    return true
+  end
+  
+  
+end
