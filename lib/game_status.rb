@@ -38,14 +38,14 @@ def won_helper(arr)
   r = 0
   c = 0
   winner = 0
-  while r < WIN_COMBINATIONS.length
+  while r < WIN_COMBINATIONS.length #because I can
     while c < WIN_COMBINATIONS[r].length
-      if arr.include? WIN_COMBINATIONS[r][c]
+      if arr.include? WIN_COMBINATIONS[r][c] #because I can
         winner += 1
         if winner == 3
-          winning_array = []
+          winning_array = [] #to prevent potential side effect we will return a copy
           x = 0
-          while x < WIN_COMBINATIONS[r].length
+          while x < WIN_COMBINATIONS[r].length 
             winning_array.push(WIN_COMBINATIONS[r][x])
             x += 1
           end
