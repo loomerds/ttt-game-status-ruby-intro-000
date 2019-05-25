@@ -27,7 +27,7 @@ def won?(board)
     end
     x += 1
   end
-  if won_helper(xNums) != false
+  if won_helper(xNums)
     return won_helper(xNums)
   else
     return won_helper(oNums)
