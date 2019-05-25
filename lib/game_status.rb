@@ -45,7 +45,7 @@ def won_helper(arr)
         if winner == 3
           winning_array = [] #to prevent potential side effect we will return a copy
           x = 0
-          while x < WIN_COMBINATIONS[r].length 
+          while x < WIN_COMBINATIONS[r].length
             winning_array.push(WIN_COMBINATIONS[r][x])
             x += 1
           end
