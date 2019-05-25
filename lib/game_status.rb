@@ -69,5 +69,3 @@ def full?(board)
     val == "X" || val == "O"
   end
 end
-
-
