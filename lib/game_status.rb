@@ -21,65 +21,45 @@ def won?(board)
   x = 0
   while x < board.length do
     if board[x] == "X"
-      xNums.push[x]
+      xNums.push(x)
     elsif board[x] == "O"
-      oNums.push[x]
+      oNums.push(x)
     end
     x += 1
   end
-  puts xNums
-  puts oNums
-  r = 0
-  c = 0
-  winner = 0
-  while r < WIN_COMBINATIONS.length
-    while c < WIN_COMBINATIONS[r].length
-      if xNums.include? WIN_COMBINATIONS[r][c]
-        winner += 1
-        if winner == 3
-          winning_array = []
-          c = 0
-          while c < WIN_COMBINATIONS[r].length
-            winning_array.push[WIN_COMBINATIONS[r][c]]
-            c += 1
-          end
-          puts winning_array
-          return winning_array
-        else
-          break
-        end
-      end
-      c += 1
-    end
-    r += 1
-    winner = 0
-  end
+  puts won_helper(xNums)
+  puts won_helper(oNums)
 
+end
+
+def won_helper(arr)
   r = 0
   c = 0
   winner = 0
   while r < WIN_COMBINATIONS.length
     while c < WIN_COMBINATIONS[r].length
-      if oNums.include? WIN_COMBINATIONS[r][c]
+      if arr.include? WIN_COMBINATIONS[r][c]
         winner += 1
         if winner == 3
           winning_array = []
-          c = 0
-          while c < WIN_COMBINATIONS[r].length
-            winning_array.push[WIN_COMBINATIONS[r][c]]
-            c += 1
+          x = 0
+          while x < WIN_COMBINATIONS[r].length
+            winning_array.push(WIN_COMBINATIONS[r][x])
+            x += 1
           end
-          puts winning_array
           return winning_array
         else
-          break
+          c += 1
+          next
         end
       end
       c += 1
     end
+    c = 0
     r += 1
     winner = 0
   end
+  return false
 end
 
 def full?(board)
